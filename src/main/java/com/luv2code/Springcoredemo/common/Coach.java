@@ -1,4 +1,4 @@
-package com.luv2code.Springcoredemo;
+package com.luv2code.Springcoredemo.common;
 
 public interface Coach {
 

@@ -1,13 +1,20 @@
-package com.luv2code.Springcoredemo;
+package com.luv2code.Springcoredemo.common;
 
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 
 @Component //marks the class as a Spring Bean, a spring bean is a regular Java class that's managed by Spring and the annotation also makes the bean available for dependency injection
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // -> new object instance is created for each injection //PROTOTYPE SCOPE
 public class CricketCoach implements Coach {
+
+    public CricketCoach(){
+        System.out.println("In constrcutor: " + getClass().getSimpleName());
+    }
 
     @Override
     public String getDailyWorkout(){
-        return "Practice for 20 minutes";
+        return "Practice for 20 minutes!!!";
     }
     
 }
